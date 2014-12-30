@@ -10,6 +10,8 @@ var env = process.env.NODE_ENV || 'development';
 var cache = null;
 
 module.exports = function(configLocation, params) {
+  params || (params = {});
+
   if (cache) return cache;
 
   if (typeof configLocation !== 'string') {
