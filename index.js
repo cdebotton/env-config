@@ -7,7 +7,11 @@ var merge = require('deepmerge');
 var reduceYaml = require('./lib/reduce-yaml');
 var env = process.env.NODE_ENV || 'development';
 
+var cache = null;
+
 module.exports = function(configLocation) {
+  if (cache) return cache;
+
   if (typeof configLocation !== 'string') {
     throw new TypeError('You must provide relative path to your configuration as a string');
   }
@@ -29,6 +33,8 @@ module.exports = function(configLocation) {
 
     options = merge(options, envOptions);
   }
+
+  cache = options;
 
   return options;
 };
