@@ -9,17 +9,22 @@ var env = process.env.NODE_ENV || 'development';
 
 var cache = null;
 
-module.exports = function(configLocation) {
+module.exports = function(configLocation, params) {
   if (cache) return cache;
 
   if (typeof configLocation !== 'string') {
     throw new TypeError('You must provide relative path to your configuration as a string');
   }
 
-  var stack = callsite();
-  var callee = stack[1].getFileName();
-  var dirname = path.dirname(callee);
-  var cfgDir = path.join(dirname, configLocation);
+  if (params.absolute) {
+    var cfgDir = configLocation;
+  }
+  else {
+    var stack = callsite();
+    var callee = stack[1].getFileName();
+    var dirname = path.dirname(callee);
+    var cfgDir = path.join(dirname, configLocation);
+  }
 
   if (! fs.existsSync(cfgDir)) {
     throw new ReferenceError('The configuration path provided does not exist');
