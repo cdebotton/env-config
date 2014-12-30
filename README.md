@@ -12,14 +12,14 @@ options that you want on an environment by environment basis.
 ## usage
 
 ### yaml structure
-`
+```
   ./app
     ./config
       ./production
         app.yaml
       app.yaml
       database.yaml
-`
+```
 
 ### yaml files
 ```yaml
