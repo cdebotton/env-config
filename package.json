@@ -1,0 +1,31 @@
+{
+  "name": "env-config",
+  "version": "1.0.0",
+  "description": "Environment based YAML configurations for Node apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cdebotton/env-config.git"
+  },
+  "keywords": [
+    "env",
+    "environment",
+    "config",
+    "yaml"
+  ],
+  "author": "Christian de Botton <debotton@brooklynunited.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cdebotton/env-config/issues"
+  },
+  "homepage": "https://github.com/cdebotton/env-config",
+  "dependencies": {
+    "callsite": "^1.0.0",
+    "deepmerge": "^0.2.7",
+    "js-yaml": "^3.2.5",
+    "object-assign": "^2.0.0"
+  }
+}
