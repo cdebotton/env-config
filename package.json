@@ -1,6 +1,6 @@
 {
   "name": "yaml-env-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Environment based YAML configurations for Node apps",
   "main": "index.js",
   "scripts": {
